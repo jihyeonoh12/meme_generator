@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/meme_generator/static/css/main.073c9b0a.css",
-    "main.js": "/meme_generator/static/js/main.28c6f719.js",
+    "main.css": "/meme_generator/static/css/main.9c0c3780.css",
+    "main.js": "/meme_generator/static/js/main.0a3a39ca.js",
     "static/js/787.876f76cf.chunk.js": "/meme_generator/static/js/787.876f76cf.chunk.js",
-    "static/media/logo.svg": "/meme_generator/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/meme_generator_icon.png": "/meme_generator/static/media/meme_generator_icon.32c560005dc1dcd2495f.png",
     "index.html": "/meme_generator/index.html",
-    "main.073c9b0a.css.map": "/meme_generator/static/css/main.073c9b0a.css.map",
-    "main.28c6f719.js.map": "/meme_generator/static/js/main.28c6f719.js.map",
+    "main.9c0c3780.css.map": "/meme_generator/static/css/main.9c0c3780.css.map",
+    "main.0a3a39ca.js.map": "/meme_generator/static/js/main.0a3a39ca.js.map",
     "787.876f76cf.chunk.js.map": "/meme_generator/static/js/787.876f76cf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.28c6f719.js"
+    "static/css/main.9c0c3780.css",
+    "static/js/main.0a3a39ca.js"
   ]
 }
