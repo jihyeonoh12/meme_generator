@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .navbar {
@@ -48,13 +49,72 @@
 
 .body {
   margin: 40px auto;
+  display: inline-grid;
+  max-width: 600px;
+  width: 100%;
+}
+
+button {
+  margin: 10px;
+  background-color: mediumseagreen;
+  padding: 10px;
+  font-size: 20px;
+    border-radius: 7px;
+    border: 2px solid mediumseagreen;
+    color: white;
+}
+.RandomButtom {
+  margin: 10px 10px 100px;
+
+}
+
+.exportButtom {
+  margin-top: 100px;
+}
+
+button:hover {
+  background-color: darkcyan;
+  border: 2px solid darkcyan;
+}
+
+.inputs {
+  display: flex;
 }
 
 input {
+  width: 100%;
   font-size: 20px;
     border-radius: 7px;
     padding: 10px;
     border: 2px solid mediumseagreen;
     color: mediumseagreen;
     margin: 10px;
+}
+input:focus {
+  border: 2px solid darkcyan !important;
+  outline: none;
+}
+
+.randompic {
+  width: 100%;
+}
+
+.text {
+  width: 100%;
+  font-size: 55px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  font-weight: 900;
+  margin: 10px auto;
+  z-index: 50;
+  position: sticky;
+}
+
+.upperText {
+  margin-bottom: -85px;
+}
+
+.bottomText {
+margin-top: -85px;
+
 }

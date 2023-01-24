@@ -1,11 +1,14 @@
 import React from 'react';
+import html2canvas from 'html2canvas';
 
 
 export default function Body () {
+    
     const[meme, setMeme] = React.useState({
         upperText: "",
         bottomText: "",
-        randomImage: "https://i.imgflip.com/43a45p.png",
+        randomImage: "https://i.imgflip.com/4t0m5.jpg",
+        randomImageName: "",
     });
 
     const[randomPic, setRandomPic] = React.useState([])
@@ -22,16 +25,59 @@ export default function Body () {
         setMeme((prevMeme => {
             return {
             ...prevMeme,
-            randomImage: randomPic[randomNum].url
+            randomImage: randomPic[randomNum].url,
+            randomImageName: randomPic[randomNum].name
         }})) 
     }
 
+    function handleChange(event) {
+   
+      setMeme((prevText => {
+        return {
+        ...prevText,
+        [event.target.name ]: event.target.value,
+    }}))
+
+    }
+
+    const printRef = React.useRef();
+
+    const handleDownloadImage = async () => {
+      const element = printRef.current;
+    
+    //   const element = document.getElementById('capture');
+      const canvas = await html2canvas(element, {allowTaint: true, useCORS: true, logging: true});
+  
+      const data = canvas.toDataURL('image/jpg');
+      const link = document.createElement('a');
+  
+      if (typeof link.download === 'string') {
+        link.href = data;
+        link.download = 'image.jpg';
+  
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        window.open(data);
+      }
+    };
+ 
+
     return(
-        <section className="body">
-         <input placeholder="Upper Text" />
-         <input placeholder="Bottom Text" />
-        <button onClick={changeRandomPic}>Get Random Pic</button>
-        <img src={meme.randomImage} />
+        <section className="body" >
+        <div className='inputs'>
+         <input placeholder="Upper Text" name="upperText" onChange={handleChange} value={meme.upperText}/>
+         <input placeholder="Bottom Text" name="bottomText" onChange={handleChange} value={meme.bottomText}/>
+        </div>
+        <button className='RandomButtom' onClick={changeRandomPic}>Get Random Image</button>
+        <div className='meme-container'  ref={printRef} >
+        <h1 className='text upperText'>{meme.upperText}</h1>
+        <img className='randompic' src={meme.randomImage} alt={meme.randomImageName} />
+        <h1 className='text bottomText'>{meme.bottomText}</h1>
+        </div>
+        <button className='exportButtom' onClick={handleDownloadImage}>export Image</button>
+
         </section>
     )
 }
