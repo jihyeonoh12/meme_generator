@@ -8,7 +8,7 @@ export default function Body () {
         upperText: "",
         bottomText: "",
         randomImage: "https://i.imgflip.com/4t0m5.jpg",
-        randomImageName: "",
+        randomImageName: "Shiba Inu",
     });
 
     const[randomPic, setRandomPic] = React.useState([])
@@ -53,7 +53,7 @@ export default function Body () {
   
       if (typeof link.download === 'string') {
         link.href = data;
-        link.download = 'image.jpg';
+        link.download = meme.randomImageName +'.jpg';
   
         document.body.appendChild(link);
         link.click();
