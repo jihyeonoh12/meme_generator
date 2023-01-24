@@ -2,7 +2,7 @@ import React from 'react';
 import html2canvas from 'html2canvas';
 
 
-export default function Body () {
+export default function Body (props) {
     
     const[meme, setMeme] = React.useState({
         upperText: "",
@@ -63,15 +63,16 @@ export default function Body () {
       }
     };
  
+    const modeName = props.darkMode === true ? 'light' : 'dark'
 
     return(
-        <section className="body" >
+        <section className={'body ' + modeName} >
         <div className='inputs'>
          <input placeholder="Upper Text" name="upperText" onChange={handleChange} value={meme.upperText}/>
          <input placeholder="Bottom Text" name="bottomText" onChange={handleChange} value={meme.bottomText}/>
         </div>
         <button className='RandomButtom' onClick={changeRandomPic}>Get Random Image</button>
-        <div className='meme-container'  ref={printRef} >
+        <div className={'meme-container '+ modeName}  ref={printRef} >
         <h1 className='text upperText'>{meme.upperText}</h1>
         <img className='randompic' src={meme.randomImage} alt={meme.randomImageName} />
         <h1 className='text bottomText'>{meme.bottomText}</h1>
